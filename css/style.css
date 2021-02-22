@@ -1,0 +1,7 @@
+.user{
+    margin: 1em;
+    background-color: salmon;
+    border-radius: .8em;
+    box-shadow: .5em .8em 1em gray;
+    padding: 1em;
+}

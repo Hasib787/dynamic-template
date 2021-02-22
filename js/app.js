@@ -1,12 +1,16 @@
 fetch('https://jsonplaceholder.typicode.com/users')
-.then(response => response.json())
-.then(data => showUserNames(data))
+    .then(response => response.json())
+    .then(data => showUserNames(data))
 
-function showUserNames(data){
-    let lists ='';
+function showUserNames(data) {
+    let userHtml = '';
     data.forEach(user => {
-        lists = lists + `<li>${user.name}</li>`
+        userHtml = userHtml + `<div class="user">
+        <h2>${user.name}</h2>
+        <p>Email: ${user.email}</p>
+        <p>${user.company.name}.${user.company.catchPhrase}.${user.company.bs}</p>
+        </div>`
     });
-    const ul = document.getElementById('user-list');
-    ul.innerHTML = lists;
+    const userContainer = document.getElementById('container-list');
+    userContainer.innerHTML = userHtml;
 }
